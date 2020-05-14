@@ -2,6 +2,7 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
+
 }
 
 .display {
@@ -19,5 +20,6 @@
 }
 
 .options-item {
+
 
 }

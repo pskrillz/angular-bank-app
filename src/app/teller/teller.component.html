@@ -1,36 +1,75 @@
-<h1>Teller View</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+<h5>Teller View</h5>
+
+
+
+
 <div class="main">
   <section class="display">
     <!-- Display: Customer information except for when inquiring about transaction -->
     <h3>Customer Information</h3>
-    <p>Customer Name: First Last</p>
-    <p>Age: 100</p>
-    <p>Address: 1234 Test Lane.<br>
-      San Diego, CA 92000<br>
-      United States
+    <p>Customer Name: {{ BankService.account.fname }} {{BankService.account.lname}}</p>
+    <p>Age: {{ BankService.account.age}}</p>
+    <p>Address: {{ BankService.account.address.street }}<br>
+      {{ BankService.account.address.city }}, {{ BankService.account.address.state }} {{ BankService.account.address.zip }}<br>
+      {{ BankService.account.address.country }}
     </p>
     <br><br>
     <!-- Display: if inquiring about transactions -->
-    <h3>Last 3 Transactions</h3>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
-    <p>[01-01-2018] -  Withdrawal ($40 USD)</p>
-    <p>[01-01-2018] -  Deposit ($20 USD)</p>
+    
+    <div *ngIf="BankService.transactionHistory"> 
+      <p *ngFor="let transaction of BankService.account.transactions | slice: -3">
+        Last Transactions
+        [{{ transaction.date }}] -  {{transaction.type}} - {{transaction.amount | currency}}
+      </p>
+    </div> 
+   
   </section>
   <aside class="options">
     <section class="balance">
       <!-- Display customer balance -->
-      $20.00 USD
+         Customer Balance:
+      {{ BankService.account.balance | currency }}
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
-      <li class="options-item">
-        <button>Widthdrawl for Customer</button>
+      <li>
+        <input type="number"  [(ngModel)]='BankService.value'/>
       </li>
       <li class="options-item">
-        <button>Deposit for Customer</button>
+        <button class="btn btn-info m-1" 
+        (click)="BankService.withdraw()">Widthdrawl</button>
       </li>
       <li class="options-item">
-        <button>Customer Transaction History</button>
+        <button class="btn btn-info m-1"
+        (click)="BankService.deposit()">Deposit</button>
+      </li>
+      <li class="options-item">
+        <button class="btn btn-info m-1"
+        (click)="BankService.showTransactionHistory()">Transaction History</button>
       </li>
     </ul>
   </aside>

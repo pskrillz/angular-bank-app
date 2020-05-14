@@ -4,6 +4,8 @@
   list-style:none;
   justify-content:space-between;
   align-items: stretch;
+  border: 2px solid black;
+
 }
 .nav li {
   margin:0 auto;
