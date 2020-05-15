@@ -22,7 +22,7 @@
     
     
     </body>
-  </html>
+    </html>
 
 
 
@@ -30,27 +30,36 @@
     <!-- Display Feedback information here -->
 
 
-    <h4 class="nametitle">Hello {{ BankService.account.fname }}! </h4>
+    <h4 class="nametitle" *ngIf="BankService.greeting">
+      Hello {{ BankService.account.fname }}! </h4>
 
-    <p *ngIf="!BankService.transactionGenerated && !BankService.transactionHistory">
+    <p *ngIf="!BankService.transactionGenerated && 
+    !BankService.transactionHistory && BankService.greeting">
       1) Enter Amount <br>
       2) Select Transaction Type
     </p>
 
-    <p *ngIf="BankService.transactionGenerated && !BankService.transactionHistory"> Transaction Successful!<br>
+    <p *ngIf="BankService.transactionGenerated && 
+    !BankService.transactionHistory"> Transaction Successful!<br>
       Your balance is ${{ BankService.account.balance }}
-  </p>
+    </p>
 
-  <input type='number' *ngIf="!BankService.transactionHistory"   [(ngModel)]='BankService.value'/>
+  <input type='number' *ngIf="!BankService.transactionHistory && 
+  BankService.greeting"   [(ngModel)]='BankService.value'/>
 
-  <div *ngIf="BankService.transactionHistory" >
-      <div *ngFor="let transaction of BankService.account.transactions | slice: -3">
+  <div *ngIf="BankService.transactionHistory">
+      <div *ngFor="let transaction of BankService.account.transactions 
+      | slice: -5">
         [{{ transaction.date }}] -
         {{ transaction.type }} -
         {{ transaction.amount | currency }}
 
       </div>
-      </div> 
+      </div>
+      
+      <div>
+        <div *ngIf="balanceView"></div>
+      </div>
 
 
 
@@ -62,22 +71,35 @@
     <ul class="options-list">
       <li class="options-item">
         <button class="btn btn-info m-1" 
-        (click)="BankService.homeScreen()"> Home </button>
+        (click)="BankService.homeScreen()">
+        Home 
+      </button>
       </li>
       <li class="options-item">
-        <button [disabled]="BankService.value === 0" class="btn btn-info m-1" 
-        (click)="BankService.withdraw()">Make a Widthdrawl</button>
+        <button [disabled]="BankService.value === undefined" 
+        class="btn btn-info m-1" 
+        (click)="BankService.withdraw()">
+        Make a Widthdrawl
+      </button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1" [disabled]="BankService.value === 0" 
-        (click)="BankService.deposit()">Deposit Money</button>
+        <button [disabled]="BankService.value === undefined" 
+        class="btn btn-info m-1" 
+        (click)="BankService.deposit()">
+        Deposit Money
+      </button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1">Balance Inquiry</button>
+        <button class="btn btn-info m-1"
+        (click)="BankService.showBalance()">
+        Balance Inquiry
+      </button>
       </li>
       <li class="options-item">
         <button class="btn btn-info m-1" 
-        (click)="BankService.showTransactionHistory()">Transactions History</button>
+        (click)="BankService.showTransactionHistory()">
+        Transactions History
+      </button>
       </li>
       
     </ul>

@@ -1,16 +1,31 @@
+
+
+
+
+
+/* its all messed up with the 'break
+points' and different window sizes, 
+and I can't seem to understand how
+flexbox works, on box1 none of the 
+prompts are working to adjust the 
+items.*/
+
+
+
+
 .container {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    margin-top: 50px
+    margin-top: 50px;
+    justify-content: space-between;
+    
 }
 
 .box {
-   
     width: 50vh;
     text-align: center;
-    /* justify-items: flex-end; */
-    /* justify-content: flex-end; */
+    
     
     
     
@@ -18,7 +33,11 @@
 
 
 .box1 {
-    border: 1px solid black
+    
+
+    
+ 
+
 
 }
 
@@ -28,14 +47,23 @@
 }
 
 .cInfo {
-    font-size: small;
-    
+    display: grid;
+    height: 50vh;
+    grid-template: auto auto auto / 1fr;
+    position: relative;
     
    
 }
 
 
 .form-group{
-    width: auto;
+    width: auto 10vw;
+
+
    
 }
+
+.c-info-title {
+
+}
+
