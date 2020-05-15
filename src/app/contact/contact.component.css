@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin-top: 50px
+}
+
+.box {
+   
+    width: 50vh;
+    text-align: center;
+    /* justify-items: flex-end; */
+    /* justify-content: flex-end; */
+    
+    
+    
+}
+
+
+.box1 {
+    border: 1px solid black
+
+}
+
+.box2 {
+    
+    text-align: center;
+}
+
+.cInfo {
+    font-size: small;
+    
+    
+   
+}
+
+
+.form-group{
+    width: auto;
+   
+}

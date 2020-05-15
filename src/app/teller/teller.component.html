@@ -28,9 +28,12 @@
 
 
 <div class="main">
-  <section class="display">
+  <section class="display" >
     <!-- Display: Customer information except for when inquiring about transaction -->
-    <h3>Customer Information</h3>
+    
+    
+    
+    <h4>Customer Information</h4>
     <p>Customer Name: {{ BankService.account.fname }} {{BankService.account.lname}}</p>
     <p>Age: {{ BankService.account.age}}</p>
     <p>Address: {{ BankService.account.address.street }}<br>
@@ -39,19 +42,21 @@
     </p>
     <br><br>
     <!-- Display: if inquiring about transactions -->
-    
+   
+
     <div *ngIf="BankService.transactionHistory"> 
+      <h4>Transaction History</h4>
       <p *ngFor="let transaction of BankService.account.transactions | slice: -3">
-        Last Transactions
+        
         [{{ transaction.date }}] -  {{transaction.type}} - {{transaction.amount | currency}}
       </p>
     </div> 
    
   </section>
   <aside class="options">
-    <section class="balance">
-      <!-- Display customer balance -->
-         Customer Balance:
+    <section class="balance" >
+      
+         <h5 class="cbal">Customer Balance:</h5>
       {{ BankService.account.balance | currency }}
     </section>
     <!-- Add functionality to the buttons below -->

@@ -45,6 +45,7 @@ export class BankService {
   value: number;
   transactionGenerated = false;
   transactionHistory = false;
+  showCustInfo = true;
 
 
 
@@ -68,7 +69,11 @@ export class BankService {
    
 
    deposit() {
-    
+    if ( this.value === null) {
+      return alert('No Amount Was Entered')
+    }
+
+
     this.account.balance += this.value
       this.transactionGenerated = true
     
@@ -88,7 +93,7 @@ export class BankService {
 
    showTransactionHistory() {
     // this.transactionHistory = true
-   
+
     if (this.transactionHistory === false) {
       this.transactionHistory = true
     } else {this.transactionHistory = false}

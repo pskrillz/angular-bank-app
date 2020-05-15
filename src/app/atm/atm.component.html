@@ -30,7 +30,7 @@
     <!-- Display Feedback information here -->
 
 
-    <h4>Hello {{ BankService.account.fname }}! </h4>
+    <h4 class="nametitle">Hello {{ BankService.account.fname }}! </h4>
 
     <p *ngIf="!BankService.transactionGenerated && !BankService.transactionHistory">
       1) Enter Amount <br>
