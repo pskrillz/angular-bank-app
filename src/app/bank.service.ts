@@ -52,18 +52,9 @@ export class BankService {
   transactionHistory = false;
   showCustInfo = true;
   greeting = true;
-  balanceView = false
+  balanceView = false;
   defaultScreen = true;
 
-
-  allExeceptOneToggle(){
-    this.transactionGenerated = false;
-    this.transactionHistory = false;
-    this.showCustInfo = true;
-    this.greeting = true;
-    this.balanceView = false
-    this.defaultScreen = true;
-  }
 
 
   withdraw() {
@@ -122,23 +113,61 @@ export class BankService {
     
    }
 
-
-   showBalance() {
-    //  this.homeScreen();
-   if (this.balanceView === false) {
-        this.balanceView = true
-        this.transactionGenerated = false;
-        this.transactionHistory = false;
-        this.greeting = false;
-        this.balanceView = true
-
-   } else {
-    
-    }
-
+   showBalanceView() {
+     if (this.balanceView === false) {
+     } this.balanceView === true
    }
 
 
+
+
+
+
+   allExceptChosen(view1, view2, view3){
+    this.transactionGenerated = false;
+    this.transactionHistory = false;
+    this.showCustInfo = false;
+    this.greeting = false;
+    this.balanceView = false
+    this.defaultScreen = false;
+
+    if (view1 === 'transactionGenerated' 
+        || view2 === 'transactionGenerated'
+        || view3 === 'transactionGenerated') {
+      this.transactionGenerated = true
+    }
+
+    if (view1 === 'transactionHistory' 
+        || view2 === 'transactionHistory'
+        || view3 === 'transactionHistory') {
+      this.transactionHistory = true
+    }
+
+    if (view1 === 'showCustInfo' 
+        || view2 === 'showCustInfo'
+        || view3 === 'showCustInfo') {
+      this.showCustInfo = true
+    }
+
+    if (view1 === 'greeting' 
+        || view2 === 'greeting'
+        || view3 === 'greeting') {
+      this.greeting = true
+    }
+
+    if (view1 === 'balanceView' 
+        || view2 === 'balanceView'
+        || view3 === 'balanceView') {
+      this.balanceView = true
+    }
+
+    if (view1 === 'defaultScreen' 
+        || view2 === 'defaultScreen'
+        || view3 === 'defaultScreen') {
+      this.defaultScreen = true
+    }
+    
+  }
 
 
 

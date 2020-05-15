@@ -48,18 +48,25 @@
   BankService.greeting"   [(ngModel)]='BankService.value'/>
 
   <div *ngIf="BankService.transactionHistory">
-      <div *ngFor="let transaction of BankService.account.transactions 
+    <h5> Transaction History </h5><br>  
+    <div *ngFor="let transaction of BankService.account.transactions 
       | slice: -5">
+      
         [{{ transaction.date }}] -
         {{ transaction.type }} -
         {{ transaction.amount | currency }}
 
       </div>
       </div>
-      
-      <div>
-        <div *ngIf="balanceView"></div>
-      </div>
+      <br><br>
+        <div *ngIf="BankService.balanceView">
+          <h5>Total Balance:</h5> 
+          {{ BankService.account.balance | currency }}
+        </div> 
+
+          
+
+        
 
 
 
@@ -90,16 +97,16 @@
       </button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1"
-        (click)="BankService.showBalance()">
+        <button class="btn btn-info m-1" 
+        (click)="BankService.allExceptChosen('balanceView')">
         Balance Inquiry
       </button>
       </li>
       <li class="options-item">
         <button class="btn btn-info m-1" 
-        (click)="BankService.showTransactionHistory()">
+        (click)="BankService.allExceptChosen('transactionHistory')">
         Transactions History
-      </button>
+        </button>
       </li>
       
     </ul>
