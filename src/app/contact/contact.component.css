@@ -47,10 +47,12 @@ items.*/
 }
 
 .cInfo {
-    display: grid;
+    /* display: grid; */
+    display: flex;
+    flex-direction: row;
     height: 50vh;
-    grid-template: auto auto auto / 1fr;
-    position: relative;
+    /* grid-template: auto auto auto / 1fr; */
+  
     
    
 }

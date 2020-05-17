@@ -54,6 +54,8 @@ export class BankService {
   greeting = true;
   balanceView = false;
   defaultScreen = true;
+  staffName = 'Becky';
+  beckyUID = '#02120'
 
 
 
@@ -62,7 +64,7 @@ export class BankService {
     if ( this.value > this.account.balance) {
       return alert('insufficent funds!')}
 
-    if ( this.value === null || this.value === 0) {
+    if ( this.value === undefined || this.value === 0) {
        return alert('No Amount Was Entered')
     }
 
@@ -81,7 +83,7 @@ export class BankService {
    
 
    deposit() {
-    if ( this.value === null || this.value === 0) {
+    if ( this.value === undefined || this.value === 0) {
       return alert('No Amount Was Entered')
     }
 
@@ -98,25 +100,7 @@ export class BankService {
     this.value = 0
    }
 
-   homeScreen(){
-     this.transactionGenerated = false;
-     this.transactionHistory = false;
-     this.greeting = true
-   }
-
-   showTransactionHistory() {
-    // this.transactionHistory = true
-
-    if (this.transactionHistory === false) {
-      this.transactionHistory = true
-    } else {this.transactionHistory = false}
-    
-   }
-
-   showBalanceView() {
-     if (this.balanceView === false) {
-     } this.balanceView === true
-   }
+  
 
 
 

@@ -32,7 +32,10 @@
     <!-- Display: Customer information except for when inquiring about transaction -->
     
     
-    
+
+
+
+    <div *ngIf="BankService.showCustInfo">
     <h4>Customer Information</h4>
     <p>Customer Name: {{ BankService.account.fname }} {{BankService.account.lname}}</p>
     <p>Age: {{ BankService.account.age}}</p>
@@ -40,7 +43,13 @@
       {{ BankService.account.address.city }}, {{ BankService.account.address.state }} {{ BankService.account.address.zip }}<br>
       {{ BankService.account.address.country }}
     </p>
+  </div>
     <br><br>
+
+   
+
+
+
     <!-- Display: if inquiring about transactions -->
    
 
@@ -51,6 +60,14 @@
         [{{ transaction.date }}] -  {{transaction.type}} - {{transaction.amount | currency}}
       </p>
     </div> 
+
+
+    <div class='staffLogin' *ngIf="BankService.defaultScreen">
+      Logged In... {{ BankService.staffName }}
+       {{BankService.beckyUID}} 
+    </div>
+
+
    
   </section>
   <aside class="options">
@@ -66,6 +83,12 @@
       </li>
       <li class="options-item">
         <button class="btn btn-info m-1" 
+        (click)="BankService.allExceptChosen('showCustInfo', 'defaultScreen')">
+        Home 
+      </button>
+      </li>
+      <li class="options-item">
+        <button class="btn btn-info m-1" 
         (click)="BankService.withdraw()">Withdrawl</button>
       </li>
       <li class="options-item">
@@ -74,7 +97,7 @@
       </li>
       <li class="options-item">
         <button class="btn btn-info m-1"
-        (click)="BankService.showTransactionHistory()">Transaction History</button>
+        (click)="BankService.allExceptChosen('transactionHistory')">Transaction History</button>
       </li>
     </ul>
   </aside>
