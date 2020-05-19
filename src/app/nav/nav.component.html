@@ -1,11 +1,22 @@
-<ul class="nav">
-  <li>
-    <a routerLink="atm">ATM</a>
-  </li>
-  <li>
-    <a routerLink="teller">Teller</a>
-  </li>
-  <li>
-    <a routerLink="contact">Contact</a>
-  </li>
-</ul>
+
+
+
+<div class="btn-group btn-group-toggle myNav" data-toggle="buttons">
+  <label class="btn btn-secondary button1">
+    <input type="radio" name="options" 
+    id="option1" autocomplete="off" 
+    (click)="BankService.atmWindow()" >ATM
+  </label>
+  <label class="btn btn-secondary button2">
+    <input type="radio" name="options" 
+    id="option2" autocomplete="off"
+    (click)="BankService.tellerWindow()"> 
+    Teller
+  </label>
+  <label class="btn btn-secondary button3">
+    <input type="radio" name="options" 
+    id="option3" autocomplete="off"
+    (click)="BankService.contactWindow()"> 
+    Contact
+  </label>
+</div>

@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { e } from '@angular/core/src/render3';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
 })
 export class BankService {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   account: any = {
     fname:'Pi',
@@ -152,6 +153,21 @@ export class BankService {
     }
     
   }
+
+
+
+
+atmWindow() {
+    this.router.navigate([`/atm`])
+}
+
+tellerWindow(){
+  this.router.navigate([`/teller`])
+}
+
+contactWindow() {
+  this.router.navigate([`/contact`])
+}
 
 
 

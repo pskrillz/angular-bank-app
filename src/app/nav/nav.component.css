@@ -1,12 +1,21 @@
-.nav {
+
+
+.myNav {
   display:flex;
   flex-flow:row nowrap;
   list-style:none;
   justify-content:space-between;
   align-items: stretch;
-  border: 2px solid black;
-
+  margin-top: 0 auto;
+  padding-top: 0 auto;
 }
-.nav li {
-  margin:0 auto;
+
+
+.button1, .button2, .button3 {
+
+  background: #fcbf1e;
+}
+
+.active{
+  background: #035aa6;
 }

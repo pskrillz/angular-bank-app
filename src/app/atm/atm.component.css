@@ -3,12 +3,14 @@
   display: flex;
   flex-flow: row nowrap;
 
+
 }
 
 .display {
   flex-basis: 50vw;
-  background-color: darkslategrey;
+  background-color: #120136;
   color: white;
+  margin-left: 5vw;
 }
 
 .options {

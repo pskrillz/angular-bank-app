@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router'
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit() {
   }
 
+
+  emailAddress: string 
+  satisfaction: string
+  comment: string
+
+
+  submitForm() {
+    if (this.emailAddress == undefined ||
+        this.satisfaction == undefined||
+        this.comment == undefined){
+          return alert('Please fill all fields')
+        }
+    
+    
+    alert(this.emailAddress + this.satisfaction + this.comment)
+    this.router.navigate([`/atm`])
+    
+  }
+
+
+
 }
+
+
+

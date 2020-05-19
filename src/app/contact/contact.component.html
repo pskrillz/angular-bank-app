@@ -52,16 +52,16 @@
       <div class="box box2">
         <h4>Feedback:</h4>
         
-        <form>
+     
           <div class="form-group">
             <label>Email address:</label>
-            <input class="form-control" placeholder="enter email address">
+            <input  [(ngModel)]="emailAddress"  class="form-control" placeholder="enter email address">
           </div>
          
         
-         <div class="form-group">
+         <div class="form-group" >
             <label>Rate your Experience</label>
-            <select class="form-control">
+            <select [(ngModel)]="satisfaction" class="form-control">
               <option>5 - Very Satisfied</option>
               <option>4 - Satisfied </option>
               <option>3 - Adequate </option>
@@ -72,13 +72,13 @@
         
           <div class="form-group">
             <label>Comment:</label>
-            <textarea class="form-control" rows="3">
+            <textarea [(ngModel)]="comment" class="form-control" rows="3">
         </textarea>
           </div>
         
-        <button type="submit" class="btn btn-primary form-group">Submit</button>
+        <button type="submit" class="btn btn-primary form-group" (click)="submitForm()">Submit</button>
         
-        </form>
+     
 
 
 

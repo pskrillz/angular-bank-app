@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 .btn {
-    width: 160px;
+    /* width: 160px; */
+    
   }
 
-.main {
-  margin-left: 5vw;
+.btn-info {
+  background-color: #fcbf1e
 }

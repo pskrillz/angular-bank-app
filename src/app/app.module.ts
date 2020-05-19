@@ -11,6 +11,7 @@ import { NavComponent } from './nav/nav.component';
 import { ContactComponent } from './contact/contact.component';
 import { BankService } from './bank.service'
 import { fromEventPattern } from 'rxjs';
+import { FooterComponent } from './footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { fromEventPattern } from 'rxjs';
     TellerComponent,
     NavComponent,
     ContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
