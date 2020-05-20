@@ -5,6 +5,8 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 }
 
 .display {
@@ -12,10 +14,12 @@
   background-color: #120136;
   color: white;
   margin-left: 5vw;
+
 }
 
 .options {
-  flex-basis: 50vw;
+  flex-basis: 45vw;
+  
 }
 
 .options-list {

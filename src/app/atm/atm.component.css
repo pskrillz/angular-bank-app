@@ -2,7 +2,8 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
-
+  margin-bottom: 2vh;
+  margin-top: 2vh;
 
 }
 
@@ -11,22 +12,22 @@
   background-color: #120136;
   color: white;
   margin-left: 5vw;
+  
+  
 }
 
 .options {
-  flex-basis: 50vw;
+  flex-basis: 40vw;
+  
 }
 
 .options-list {
   list-style: none;
+  flex-direction: row;
 }
 
 .options-item {
+  flex-direction: row;
 
 
-}
-
-
-.nametitle {
-  margin-top: 40px
 }

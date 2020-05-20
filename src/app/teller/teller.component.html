@@ -20,13 +20,6 @@
 </html>
 
 
-
-
-<h5>Teller View</h5>
-
-
-
-
 <div class="main">
   <section class="display" >
     <!-- Display: Customer information except for when inquiring about transaction -->
@@ -35,14 +28,17 @@
 
 
 
-    <div *ngIf="BankService.showCustInfo">
+  <div *ngIf="BankService.showCustInfo">
     <h4>Customer Information</h4>
+    <div>
     <p>Customer Name: {{ BankService.account.fname }} {{BankService.account.lname}}</p>
     <p>Age: {{ BankService.account.age}}</p>
     <p>Address: {{ BankService.account.address.street }}<br>
       {{ BankService.account.address.city }}, {{ BankService.account.address.state }} {{ BankService.account.address.zip }}<br>
       {{ BankService.account.address.country }}
     </p>
+    
+  </div>
   </div>
     <br><br>
 
@@ -72,9 +68,8 @@
   </section>
   <aside class="options">
     <section class="balance" >
-      
-         <h5 class="cbal">Customer Balance:</h5>
-      {{ BankService.account.balance | currency }}
+      <p>Current Balance: {{BankService.account.balance | currency}}</p>
+
     </section>
     <!-- Add functionality to the buttons below -->
     <ul class="options-list">
@@ -82,21 +77,21 @@
         <input type="number"  [(ngModel)]='BankService.value'/>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1" 
+        <button class="btn m-1 btn-primary" 
         (click)="BankService.allExceptChosen('showCustInfo', 'defaultScreen')">
         Home 
       </button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1" 
+        <button class="btn btn-primary m-1" 
         (click)="BankService.withdraw()">Withdrawl</button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1"
+        <button class="btn btn-primary m-1"
         (click)="BankService.deposit()">Deposit</button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1"
+        <button class="btn btn-primary m-1"
         (click)="BankService.allExceptChosen('transactionHistory')">Transaction History</button>
       </li>
     </ul>

@@ -1,4 +1,3 @@
-<h5>ATM View</h5>
 <div class="main">
 
 
@@ -30,7 +29,7 @@
   <section class="display">
     <!-- Display Feedback information here -->
 
-
+<br><br>
     <h4 class="nametitle" *ngIf="BankService.greeting">
       Hello {{ BankService.account.fname }}! </h4>
 
@@ -71,40 +70,39 @@
 
 
 
-    
-                
-  </section>
+              
+</section>
   <aside class="options">
-    <!-- Add functionality to the buttons below -->
+    
     <ul class="options-list">
       <li class="options-item">
-        <button class="btn btn-info m-1" 
+        <button class="btn m-1 btn-primary" 
         (click)="BankService.allExceptChosen('greeting', 'defaultScreen')">
         Home 
       </button>
       </li>
       <li class="options-item">
         <button [disabled]="BankService.value === undefined" 
-        class="btn btn-info m-1" 
+        class="btn m-1 btn-primary" 
         (click)="BankService.withdraw()">
         Make a Widthdrawl
       </button>
       </li>
       <li class="options-item">
         <button [disabled]="BankService.value === undefined" 
-        class="btn btn-info m-1" 
+        class="btn m-1 btn-primary" 
         (click)="BankService.deposit()">
         Deposit Money
       </button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1" 
+        <button class="btn btn-primary m-1" 
         (click)="BankService.allExceptChosen('balanceView')">
         Balance Inquiry
       </button>
       </li>
       <li class="options-item">
-        <button class="btn btn-info m-1" 
+        <button class="btn btn-primary m-1" 
         (click)="BankService.allExceptChosen('transactionHistory')">
         Transactions History
         </button>
@@ -112,5 +110,5 @@
       
     </ul>
   </aside>
-</div>
+
 

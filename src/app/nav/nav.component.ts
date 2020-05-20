@@ -14,7 +14,11 @@ export class NavComponent {
 
 atmWindow(){
   this.BankService.atmWindow()
+  
+}
 
+atmTab(){
+  return {'active': true}
 }
 
 

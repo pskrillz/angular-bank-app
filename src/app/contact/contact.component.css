@@ -2,44 +2,27 @@
 
 
 
-
-/* its all messed up with the 'break
-points' and different window sizes, 
-and I can't seem to understand how
-flexbox works, on box1 none of the 
-prompts are working to adjust the 
-items.*/
-
-
-
-
 .container {
     display: flex;
     flex-direction: row;
     width: 100vw;
-    margin-top: 50px;
+    margin-top: 2vh;;
     justify-content: space-between;
+    margin-bottom: 3vh;
+   
     
 }
 
 .box {
-    width: 50vh;
+    width: 50vw;
     text-align: center;
-    
-    
-    
+    margin-left: 5vw;  
+    margin-right: 5vw;
+    height: 50vh;
     
 }
 
 
-.box1 {
-    
-
-    
- 
-
-
-}
 
 .box2 {
     
@@ -69,3 +52,8 @@ items.*/
 
 }
 
+.thankYou {
+    font-size: smaller;
+    position: relative;
+    bottom: 30px;
+}

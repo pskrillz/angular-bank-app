@@ -2,18 +2,21 @@
 
 
 <div class="btn-group btn-group-toggle myNav" data-toggle="buttons">
-  <label class="btn btn-secondary button1">
+  <label class="btn btn-secondary button1" 
+  routerLink="/atm" routerLinkActive="active">
     <input type="radio" name="options" 
-    id="option1" autocomplete="off" 
-    (click)="BankService.atmWindow()" >ATM
+    id="option1" autocomplete="off" >
+    ATM
   </label>
-  <label class="btn btn-secondary button2">
+  <label class="btn btn-secondary button2"
+  routerLink="/teller" routerLinkActive="active">
     <input type="radio" name="options" 
     id="option2" autocomplete="off"
     (click)="BankService.tellerWindow()"> 
     Teller
   </label>
-  <label class="btn btn-secondary button3">
+  <label class="btn btn-secondary button3"
+  routerLink="/contact" routerLinkActive="active">
     <input type="radio" name="options" 
     id="option3" autocomplete="off"
     (click)="BankService.contactWindow()"> 
