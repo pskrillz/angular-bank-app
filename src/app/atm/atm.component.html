@@ -30,8 +30,9 @@
     <!-- Display Feedback information here -->
 
 <br><br>
+<div class="displayViewText">
     <h4 class="nametitle" *ngIf="BankService.greeting">
-      Hello {{ BankService.account.fname }}! </h4>
+      Hello {{ BankService.account.fname }}! </h4><br>
 
     <p *ngIf="!BankService.transactionGenerated && 
     !BankService.transactionHistory && BankService.greeting">
@@ -64,6 +65,8 @@
           {{ BankService.account.balance | currency }}
         </div> 
 
+  </div>
+
           
 
         
@@ -72,7 +75,7 @@
 
               
 </section>
-  <aside class="options">
+  <aside class="buttons1 options">
     
     <ul class="options-list">
       <li class="options-item">
@@ -85,26 +88,26 @@
         <button [disabled]="BankService.value === undefined" 
         class="btn m-1 btn-primary" 
         (click)="BankService.withdraw()">
-        Make a Widthdrawl
+        Widthdraw
       </button>
       </li>
       <li class="options-item">
         <button [disabled]="BankService.value === undefined" 
         class="btn m-1 btn-primary" 
         (click)="BankService.deposit()">
-        Deposit Money
+        Deposit
       </button>
       </li>
       <li class="options-item">
         <button class="btn btn-primary m-1" 
         (click)="BankService.allExceptChosen('balanceView')">
-        Balance Inquiry
+        Balance
       </button>
       </li>
       <li class="options-item">
         <button class="btn btn-primary m-1" 
         (click)="BankService.allExceptChosen('transactionHistory')">
-        Transactions History
+        Transactions
         </button>
       </li>
       

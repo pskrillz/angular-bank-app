@@ -2,8 +2,7 @@
 .main {
   display: flex;
   flex-flow: row nowrap;
-  margin-bottom: 2vh;
-  margin-top: 2vh;
+  height: 70vh;
 
 }
 
@@ -11,13 +10,16 @@
   flex-basis: 50vw;
   background-color: #120136;
   color: white;
-  margin-left: 5vw;
-  
-  
+ 
+}
+
+.displayViewText{
+  margin-top: 15vh;
+  font-size: 25px;
 }
 
 .options {
-  flex-basis: 40vw;
+flex-basis: 50vw;
   
 }
 
@@ -26,8 +28,16 @@
   flex-direction: row;
 }
 
-.options-item {
-  flex-direction: row;
 
 
+.buttons1{
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.btn{
+  width: 30vw;
+  height: 10vh;
+  font-size: 30px
 }

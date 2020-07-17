@@ -1,13 +1,22 @@
 
 
+.footerfillerleft{
+    margin-top: 3vh;
+    margin-left: 2vw;
+}
+
+.footerfillerright{
+    margin-top: 3vh;
+    margin-right: 5vw;
+}
+
+
 .footer{ 
 display:flex;
 flex-flow: row nowrap;
 list-style: none;
-justify-content: center;
+justify-content: space-between;
 color: white;
-
-
 height: 15vh;
 width: auto 100vw;
 background-color: #035aa6;
@@ -19,3 +28,5 @@ margin-right: 0;
     align-self: flex-end;
     margin-bottom: 5px;
 }
+
+
