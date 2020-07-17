@@ -80,7 +80,7 @@
     <ul class="options-list">
       <li class="options-item">
         <button class="btn m-1 btn-primary" 
-        (click)="BankService.allExceptChosen('greeting', 'defaultScreen')">
+        (click)="BankService.allExceptChosen('greeting', 'defaultScreen', 'whatever')">
         Home 
       </button>
       </li>
@@ -100,13 +100,13 @@
       </li>
       <li class="options-item">
         <button class="btn btn-primary m-1" 
-        (click)="BankService.allExceptChosen('balanceView')">
+        (click)="BankService.allExceptChosen('balanceView', 'whatever', 'whatever')">
         Balance
       </button>
       </li>
       <li class="options-item">
         <button class="btn btn-primary m-1" 
-        (click)="BankService.allExceptChosen('transactionHistory')">
+        (click)="BankService.allExceptChosen('transactionHistory', 'whatever', 'whatever')">
         Transactions
         </button>
       </li>
